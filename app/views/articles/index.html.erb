@@ -1,0 +1,23 @@
+<h1>das sind meinde Indexirungen</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Beschreibungen</th>
+      <th>Actionen</th>
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+        <td><%= article.id %></td>
+      </tr>
+      <% end %>
+  </tbody>
+
+</table>
