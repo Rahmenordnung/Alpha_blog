@@ -1,8 +1,28 @@
-<h1> Artikeldetails anzeigen </h1>
 
-<p><strong>Title:  </strong><%= @article.title %></p>
-<p><strong>Description:  </strong><%= @article.description %></p>
 
-<%= link_to 'Bearbeiten' , edit_article_path(@article) %> |
-<%= link_to 'Löschen' , article_path(@article), method: :delete, data: {confirm: "Bist du sicher, oder?"} %> |
-<%= link_to 'Zuruck zum ArtikelListe' , articles_path %>
+  <h2 class= "text-center mt-4"><%= @article.title %></h2>
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8 mt-4">
+          <div class="card text-center shadow p-1 mb-5 bg-white">
+            <div class="card-header">
+              von Wonwvonf
+            </div>
+            <div class="card-body">
+              <div class="card-text text_left"><%= simple_format @article.description %></div>
+              <%= link_to "Bearbeiten", edit_article_path(@article), class: "btn btn-outline-secondary" %>
+              <%= link_to "Löschen", article_path(@article), class: "btn btn-outline-danger" %>
+
+            </div>
+            <div class="card-footer text-muted">
+              <small> Created <% time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+

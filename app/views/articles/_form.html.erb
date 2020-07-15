@@ -1,29 +1,34 @@
 
+<div class="container">
 
-<% if @article.errors.any? %>
-  <h2>Die folgenden Fehler haben das Speichern des Artikels verhindert</h2> 
-  <ul> 
-    <% @article.errors.full_messages.each do |msg|%>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>    
 
-<%= form_with(model: @article, local: true)  do |f|%>
-  <p>
-      <%= f.label :title%><br/>
-      <%= f.text_field :title%>
+  <div class="row justify-content-center">
+    <div class="col-10 mt-1 p-3">
+      <%= render 'shared/errors' %>
 
-  </p>
+        <%= form_with(model: @article, class: "shadow p-3 mb-2 bg-secondary rounded", local: true)  do |f|%>
+            <div class="form-group row">
+              <%= f.label :title, class: "col-2 col-form-label text-light" %>
+              <div class="col-10">
+                <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Titel des Artikels" %>
+              </div>
+            </div>
 
-  <p>
-      <%= f.label :description%><br/>
-      <%= f.text_area :description%>
+          <div class="form-group row">
+                <%= f.label :description, class: "col-2 col-form-label text-light"%>
+              <div class="col-10">
+                <%= f.text_area :description, rows:10,  class: "form-control shadow rounded", placeholder: "Beschreibung des Artikels"%>
+              </div>
+          </div>
 
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+          <div class="form-group row justify-content-center">
+            <%= f.submit class: "btn btn-outline-light btn-lg " %>
+          </div>
+        <% end %>
+    </div>
+  <div class="mb-3">
+    <%= link_to '[ Rückgängig machen Zuruck zum ArtikelListe }' , articles_path, class: "text-info mb-3" %>
+    </div>
+  </div>
+</div>
 

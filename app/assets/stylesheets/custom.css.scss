@@ -1,0 +1,44 @@
+    @import 'bootstrap/dist/css/bootstrap';
+    .navbar {
+        background-color: #244701 !important;
+    }
+    
+    .nav-link {
+        color: white !important;
+    }
+    
+    #logo {
+        float: left;
+        font-size: 1.7em;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        font-weight: bold;
+    }
+    
+    #home_container {
+        margin-top: 25px;
+    }
+    
+    .jumbotron {
+        background-image: asset-url('cuisine.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 425px;
+    }
+    
+    //footer settings
+    html,
+    body {
+        height: 100%;
+    }
+    
+    #page-content {
+        flex: 1 0 auto;
+        background-color: gray;
+    }
+    
+    #sticky-footer {
+        flex-shrink: none;
+    }
